@@ -17,9 +17,10 @@ export class AccelPage {
   sec: number= 0;
   length: number=0;
   timeInterval: any;
+  dataX: Array<any>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.socket = io.connect('http://192.168.1.6:8100');
+    //this.socket = io.connect('http://192.168.1.6:8100');
     this.frequency = 2000;
   }
 
@@ -30,20 +31,22 @@ export class AccelPage {
 
   ionViewDidLoad() {
     this.showSeconds();
-    (<any>window).accplugin.watchAcceleration((acc) => {
-        this.length += acc.dataX.length;
+   // (<any>window).accplugin.watchAcceleration((acc) => {
+     //   this.length += acc.dataX.length;
 
-        this.socket.emit("accMeterParams",{
+     /*   this.socket.emit("accMeterParams",{
           dataX: acc.dataX,
           dataY: acc.dataY,
           dataZ: acc.dataZ
-        });
+        });*/
 
-    }, (error) => {
-        alert(error);
-      },
-      this.op = this.freq());
+   // }, (error) => {
+    //    alert(error);
+   //   },
+   //   this.op = this.freq());
   }
+
+
 
 
   showSeconds(){

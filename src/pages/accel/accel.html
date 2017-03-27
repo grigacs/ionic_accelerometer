@@ -7,17 +7,67 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>accel</ion-title>
+    <ion-title>Settings</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-  <div>
-    Sent data Size: {{length}}
-  </div>
-  <div>
-    Seconds: {{sec}}
-  </div>
+  <ion-list radio-group>
+    <ion-list-header>
+      Delay
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label>Fastest</ion-label>
+      <ion-radio checked="true" value="fastest"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Normal</ion-label>
+      <ion-radio value="normal"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>UI</ion-label>
+      <ion-radio value="ui" ></ion-radio>
+    </ion-item>
+  </ion-list>
+  <ion-list radio-group>
+    <ion-list-header>
+      Accuracy
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label>High</ion-label>
+      <ion-radio checked="true" value="high"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Medium</ion-label>
+      <ion-radio value="medium"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Low</ion-label>
+      <ion-radio value="low" ></ion-radio>
+    </ion-item>
+  </ion-list>
+  <ion-list-header>
+    Data
+  </ion-list-header>
+  <ion-item>
+    <ion-label>X</ion-label>
+    <ion-checkbox  checked="true"></ion-checkbox>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Y</ion-label>
+    <ion-checkbox checked="true"></ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-label>Z</ion-label>
+    <ion-checkbox checked="true"></ion-checkbox>
+  </ion-item>
 </ion-content>

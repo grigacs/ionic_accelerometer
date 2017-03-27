@@ -1,0 +1,78 @@
+<!--
+  Generated template for the Record page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>record</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-content padding="false" class="has-header">
+
+      <ng-container  *ngIf="loading">
+        <ion-spinner color="primary" class="spinner" name="bubbles"></ion-spinner>
+      </ng-container>
+      <ng-container *ngIf="loading === false">
+    <div class="row">
+      <div class="col-md-6">
+        <div style="display: block;">
+          <canvas baseChart height="300"
+                  [datasets]="lineChartData"
+                  [labels]="lineChartLabels"
+                  [options]="lineChartOptions"
+                  [colors]="lineChartColors"
+                  [legend]="lineChartLegend"
+                  [chartType]="lineChartType"
+                  (chartHover)="chartHovered($event)"
+                  (chartClick)="chartClicked($event)"></canvas>
+        </div>
+      </div>
+    </div>
+        <ion-grid>
+          <ion-row>
+            <ion-col col-3>
+            </ion-col>
+            <ion-col col-3>
+              X
+            </ion-col>
+            <ion-col col-3>
+              Y
+            </ion-col>
+            <ion-col col-3>
+              Z
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-3>
+              Biggest
+            </ion-col>
+            <ion-col *ngFor="let m of max" col-3>
+              {{m.toFixed(2)}}
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-3>
+              Lowest
+            </ion-col>
+            <ion-col *ngFor="let m of min" col-3>
+              {{m.toFixed(2)}}
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <ion-list>
+          <ion-item>
+            <ion-label>Record</ion-label>
+            <ion-checkbox [(ngModel)]="Record"></ion-checkbox>
+          </ion-item>
+        </ion-list>
+      </ng-container>
+  </ion-content>
+</ion-content>
